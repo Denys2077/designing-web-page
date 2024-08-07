@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<form class="form" name="registration-form" action="#">
+		<h2 class="h2-title">Registration</h2>
+		<!-- Progress bar -->
+		<div class="progress-bar">
+			<div class="progress" id="progress"></div>
+		    <div class="progress-step active" data-title="User"></div>
+		    <div class="progress-step" data-title="Contact"></div>
+		    <div class="progress-step" data-title="Address"></div>
+		    <div class="progress-step" data-title="Birth"></div>
+		    <div class="progress-step" data-title="Finish"></div>
+		</div>
+		<!-- Page info -->
+		<!-- Page first -->
+		<div class="form-step active">
+			<div class="input-box">
+				<span class="icon"><ion-icon name="person"></ion-icon></span>
+				<input type="text" name="username" placeholder=" ">
+				<label>Username</label>
+			</div>
+			<div class="input-box">
+				<span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+				<input type="password" name="username" placeholder=" ">
+				<label>Password</label>
+			</div>
+			<div class="input-box">
+				<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+				<input type="text" name="first-name" placeholder=" ">
+				<label>First Name</label>
+			</div>
+			<div class="input-box">
+				<span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+				<input type="text" name="last-name" placeholder=" ">
+				<label>Last Name</label>
+			</div>
+			<div class="">
+				<a href="#" class="btn btn-next">Next</a>
+			</div>
+		</div>
+		<!-- Page second -->
+		<div class="form-step">
+			<div class="input-box">
+				<span class="icon"><ion-icon name="mail"></ion-icon></span> 
+				<input type="email" name="email" placeholder=" "> 
+				<label>Email</label>
+			</div>
+			<div class="input-box">
+				<span class="icon"><ion-icon name="call"></ion-icon></span> 
+				<input type="tel" name="telephone" placeholder=" "> 
+					<label>Telephone</label>
+			</div>
+			<div class="btns-group">
+				<a href="#" class="btn btn-prev">Previous</a> 
+				<a href="#" class="btn btn-next">Next</a>
+			</div>
+		</div>
+		<!-- Page Third -->
+		<div class="form-step">
+			<div class="input-box">
+				<span class="icon"><ion-icon name="globe"></ion-icon></span> 
+				<input type="text" name="country" placeholder=" "> 
+				<label>Country</label>
+			</div>
+			<div class="input-box">
+				<span class="icon"><ion-icon name="globe"></ion-icon></span> 
+				<input type="text" name="city" placeholder=" "> 
+				<label>City</label>
+			</div>
+			<div class="btns-group">
+				<a href="#" class="btn btn-prev">Previous</a> 
+				<a href="#" class="btn btn-next">Next</a>
+			</div>
+		</div>
+		<!-- Page Forth -->
+		<div class="form-step">
+			<div class="input-box">
+				<span class="icon"><ion-icon name="balloon"></ion-icon></span> 
+				<input type="date" name="date"> 
+				<label class="top-5">Date of Birth</label>
+			</div>
+			<div class="input-box">
+				<select id="gender" name="gender">
+					<option>Male</option>
+					<option>Female</option>
+					<option>Other</option>
+				</select> 
+				<label class="top-5">Sex</label>
+			</div>
+			<div class="btns-group">
+				<a href="#" class="btn btn-prev">Previous</a> 
+				<a href="#" class="btn btn-next">Next</a>
+			</div>
+		</div>
+		<!-- Page Fifth -->
+		<div class="form-step">
+			<h2 class="create-account-title">Create account</h2>
+			<p>Would you like to create new user?</p>
+			<div class="btns-group">
+				<a href="#" class="btn btn-prev">Previous</a> 
+				<button type="button" id="done" class="btn btn-done">Done</button>
+			</div>
+		</div>
+	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="javaScript/index.js"></script>
+</body>
+</html>

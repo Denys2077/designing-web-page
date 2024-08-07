@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	transition: .2s linear;
+}
+
+:root {
+	--background-color: #2a201c;
+	--text-color: #fff;
+	--secondary-color: #d3ad7f;
+	--progress-bar-step-color: #dcdcdc;
+}
+
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: var(--background-color);
+}
+/* Form step */
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 1s;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form {
+    width: clamp(320px, 30%, 400px);
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 1.5rem;
+    background: transparent;
+    backdrop-filter: blur(20px);
+	box-shadow: 0 0 30px rgba(0, 0, 0 0.5);
+}
+
+.form .h2-title {
+	font-size: 2em;
+	color: var(--text-color);
+	text-align: center;
+}
+
+.input-box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid #fff;
+	margin: 30px 0;
+}
+
+.input-box label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 1em;
+	color: var(--text-color);
+	font-weight: 500;
+	pointer-events: none;
+}
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    top: -5px;
+    color: var(--secondary-color);
+}
+
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 600;
+	padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+	position: absolute;
+	right: 8px;
+	font-size: 1.2em;
+	color: #fff;
+	line-height: 57px;
+}
+
+.input-box select {
+    width: 100%;
+	height: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 600;
+}
+
+.input-box .top-5 {
+	color: var(--secondary-color);
+    top: -5px;
+}
+
+.input-box select option {
+    color: black;
+}
+
+.form-step .create-account-title {
+	font-size: 1.6em;
+	color: #fff;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.form-step p {
+	padding-top: 10px;
+	color: #fff;
+    text-align: center;
+}
+
+/* Buttons */
+.btns-group {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+	border: 2px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 30px 0 30px;
+    transition: .5s;
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+.btn:hover {
+    background: #fff;
+	color: #162938;
+}
+/* Progress bar implementation */
+.progress-bar {
+	position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 4rem 0;
+    counter-reset: step;
+}
+
+.progress-bar::before, .progress{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: var(--progress-bar-step-color);
+}
+
+.progress {
+    background-color: var(--secondary-color);
+    width: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.progress-step {
+    width: 35px;
+    height: 35px;
+    background-color: var(--progress-bar-step-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.progress-step.active {
+   background: var(--secondary-color);
+   color: var(--text-color);
+}
